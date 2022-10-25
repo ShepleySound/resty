@@ -1,9 +1,7 @@
 # RESTy
 
-A browser based API testing tool
+A browser-based API testing tool. A living diagram for the application can be found [here](https://www.figma.com/file/zjEXRgVFWfxPtkjXgSXJsV/RESTy-Diagram?node-id=0%3A1), hosted on [FigJam](https://www.figma.com/figjam/)
 
-## Business Requirements
+## Requirements
 
-Our application will be an API testing tool that can be run in any browser, allowing a user to easily interact with APIs in a familiar interface.
-
-<!-- To Be filled in by you the student as we iterate thru Module 6 Labs -->
+The application will be an API testing tool that can be run in a web browser. It will allow a user to easily interact with APIs in a familiar interface.
