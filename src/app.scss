@@ -1,0 +1,33 @@
+$backgroundColor: #121820;
+$lightTextColor: #cccccc;
+$darkTextColor: #121212;
+$radius: 5px;
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: $backgroundColor;
+  height: 100%;
+  color: $lightTextColor;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  #root {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .info {
+    margin: 1rem 0;
+  }
+}
