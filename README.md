@@ -1,6 +1,6 @@
 # RESTy
 
-A browser-based API testing tool. A living diagram for the application can be found [here](https://www.figma.com/file/zjEXRgVFWfxPtkjXgSXJsV/RESTy-Diagram?node-id=0%3A1), hosted on [FigJam](https://www.figma.com/figjam/)
+A browser-based API testing tool. A living diagram for the application can be found [here](https://www.figma.com/file/zjEXRgVFWfxPtkjXgSXJsV/RESTy-Diagram?node-id=0%3A1), hosted on [FigJam](https://www.figma.com/figjam/).
 
 ## Requirements
 
