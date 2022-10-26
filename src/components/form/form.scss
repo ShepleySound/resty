@@ -3,38 +3,79 @@
 form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin: auto;
+  // align-items: center;
   width: 100%;
   box-sizing: border-box;
+  height: 50%;
 
-  label {
+  .search-bar {
+    box-sizing: border-box;
     display: flex;
-    margin: 1rem 0;
-    span {
-      margin-right: .5rem;
+    flex-direction: row;
+    border-radius: app.$radius;
+    overflow: hidden;
+    margin: .5rem 0;
+    width: min-content;
+    margin: .5rem;
+  }
+
+  select {
+    box-sizing: border-box;
+    height: 2rem;
+    border: 0;
+    background-color: #242836;
+    color: #eeeeee;
+    text-align: center;
+  }
+
+  input {
+    box-sizing: border-box;
+    height: 2rem;
+    border: 0;
+    padding: 0rem .5rem;
+    background-color: #182030;
+    color: #eeeeee;
+    min-width: 16rem;
+  }
+
+  button {
+    box-sizing: border-box;
+    height: 2rem;
+    border: 0;
+    padding: .5rem 1rem;
+    background-color: #242836;
+    color: #eeeeee;
+
+    &:hover {
+      background-color: #283040;
     }
   }
-  
-  fieldset {
-    display: flex;
-    margin: .25rem 0;
-    padding: 0;
-    border: none;  
-  
-    &.methods {
-      button {
-        cursor: pointer;
-        margin: 0 .5rem;
-        padding: .5rem .75rem;
-        background: #ccc;
-        border: none;
-        border-radius: app.$radius;
 
-        &:hover, &.active {
-          background: #fff;
-        }
+  .request-body {
+    box-sizing: border-box;
+    flex: 1;
+    max-width: 100%;
+    margin: .5rem;
+
+    label {
+      font-size: .9rem;
+    }
+
+    textarea {
+      box-sizing: border-box;
+      background-color: #242836;
+      border: 0;
+      color: #eeeeee;
+      border-radius: app.$radius;
+      resize: none;
+      max-width: 100%;
+
+      &:active {
+        border: none;
       }
     }
+
   }
+
+
 }

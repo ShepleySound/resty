@@ -1,18 +1,24 @@
 @use 'src/app';
 
-section {
-    width: 100vw;
+section.results {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    border-top: 2px solid #212329;
+    height: 50%;
+
+    h2 {
+        margin-left: .5rem;
+        font-size: 1.2rem;
+    }
 }
 
 .results-box {
-    background-color: darken(app.$backgroundColor, 08);
+    box-sizing: border-box;
     padding: .5rem;
     font-size: 1rem;
     height: 20rem;
     overflow-y: auto;
-    width: 100%;
+    // width: 100%;
     max-width: 80rem;
 }

@@ -1,0 +1,30 @@
+section.history-panel {
+  box-sizing: border-box;
+  margin: 0;
+  // padding-left: 1rem;
+  width: 20vw;
+  border-right: 2px solid #212329
+}
+
+.query {
+  // margin: .5rem 0;
+  padding: .5rem 0 .5rem .5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &:hover {
+    background-color: #181e25;
+  }
+}
+
+.query-method {
+  margin-right: .5rem;
+  background-color: #417425;
+  padding: 2px 6px;
+  border-radius: 20px;
+  font-size: .8rem;
+}
+
+.query-url {
+  font-size: .8rem;
+}

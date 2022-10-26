@@ -1,0 +1,15 @@
+main {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 84vh;
+  margin: 0;
+
+  .dynamic-panels {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    flex: 1;
+  }
+}
