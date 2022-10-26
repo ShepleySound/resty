@@ -13,6 +13,11 @@ section.results {
     }
 }
 
+
+img.results-box {
+    object-fit: contain;
+}
+
 .results-box {
     box-sizing: border-box;
     padding: .5rem;

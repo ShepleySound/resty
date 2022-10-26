@@ -1,13 +1,17 @@
 import "./form.scss";
+import CodeEditor from '@uiw/react-textarea-code-editor';
 import {useState} from "react"
 
 export default function Form(props) {
+
+  const [body, setBody] = useState(null)
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = {
       method: e.target.method.value,
       url: e.target.url.value,
-      body: JSON.parse(e.target.body.value)
+      body: e.target.body.value
     };
     props.handleApiCall(formData);
   };
@@ -29,13 +33,26 @@ export default function Form(props) {
         <label htmlFor="request-body-json">
           Body (JSON)
         </label>
-          <textarea
+          <CodeEditor
+            id="request-body-json"
+            name="body"
+            value={body}
+            language="json"
+            placeholder="JSON"
+            onChange={(e) => setBody(e.target.value)}
+            style={{
+              fontSize: 12,
+              backgroundColor: "#242836",
+              fontFamily: 'ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace',
+            }}
+          />
+          {/* <textarea
             id="request-body-json"
             name="body"
             rows="8"
             cols="80"
             wrap="off">
-          </textarea>
+          </textarea> */}
       </div>
     </form>
   );
