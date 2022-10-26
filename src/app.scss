@@ -3,7 +3,8 @@ $lightTextColor: #cccccc;
 $darkTextColor: #121212;
 $radius: 5px;
 
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -26,7 +27,7 @@ body {
     flex-direction: column;
     height: 100%;
   }
-  
+
   .info {
     margin: 1rem 0;
   }

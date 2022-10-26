@@ -1,4 +1,5 @@
 import "./form.scss";
+import {useState} from "react"
 
 export default function Form(props) {
   const handleSubmit = (e) => {
@@ -9,6 +10,7 @@ export default function Form(props) {
     };
     props.handleApiCall(formData);
   };
+
 
   return (
     <form onSubmit={handleSubmit}>
