@@ -26,15 +26,16 @@ export default function Form(props) {
         <button type="submit">Send</button>
       </div>
       <div className="request-body">
-        <label>
-          <span>Body (JSON)</span>
+        <label htmlFor="request-body-json">
+          Body (JSON)
+        </label>
           <textarea
+            id="request-body-json"
             name="body"
-            rows="12"
+            rows="8"
             cols="80"
             wrap="off">
           </textarea>
-        </label>
       </div>
     </form>
   );
