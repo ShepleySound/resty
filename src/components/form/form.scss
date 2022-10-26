@@ -57,6 +57,10 @@ form {
     max-width: 100%;
     margin: .5rem;
 
+    label {
+      font-size: .9rem;
+    }
+
     textarea {
       box-sizing: border-box;
       background-color: #242836;

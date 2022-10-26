@@ -5,8 +5,9 @@ export default function Form(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = {
-      method: "GET",
-      url: "https://pokeapi.co/api/v2/pokemon",
+      method: e.target.method.value,
+      url: e.target.url.value,
+      body: JSON.parse(e.target.body.value)
     };
     props.handleApiCall(formData);
   };
@@ -25,13 +26,15 @@ export default function Form(props) {
         <button type="submit">Send</button>
       </div>
       <div className="request-body">
-        <label for="request-body-json">Body (JSON)</label>
-        <textarea
-          id="request-body-json"
-          name="request-body"
-          rows="12"
-          cols="80"
-          wrap="off"></textarea>
+        <label>
+          <span>Body (JSON)</span>
+          <textarea
+            name="body"
+            rows="12"
+            cols="80"
+            wrap="off">
+          </textarea>
+        </label>
       </div>
     </form>
   );
