@@ -22,9 +22,17 @@ export default function Form(props) {
           <option value="delete">DELETE</option>
         </select>
         <input name="url" type="text" />
-        <button type="submit">GO!</button>
+        <button type="submit">Send</button>
       </div>
-
+      <div className="request-body">
+        <label for="request-body-json">Body (JSON)</label>
+        <textarea
+          id="request-body-json"
+          name="request-body"
+          rows="12"
+          cols="80"
+          wrap="off"></textarea>
+      </div>
     </form>
   );
 }
