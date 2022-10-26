@@ -7,6 +7,7 @@ form {
   width: 100%;
   box-sizing: border-box;
   height: 50%;
+  // overflow: hidden;
 
   .search-bar {
     box-sizing: border-box;
@@ -15,7 +16,7 @@ form {
     border-radius: app.$radius;
     overflow: hidden;
     margin: .5rem 0;
-    width: min-content;
+    max-width: 30rem;
     margin: .5rem;
 
     select {
@@ -34,7 +35,8 @@ form {
       padding: 0rem .5rem;
       background-color: #182030;
       color: #eeeeee;
-      min-width: 16rem;
+      min-width: 5rem;
+      flex: 1;
     }
 
     button {
@@ -63,7 +65,7 @@ form {
       font-size: .9rem;
     }
 
-    textarea {
+    .code-editor {
       box-sizing: border-box;
       background-color: #242836;
       border: 0;
@@ -71,6 +73,8 @@ form {
       border-radius: app.$radius;
       resize: none;
       max-width: 100%;
+      min-height: 8rem;
+      font-size: .8rem;
 
       &:active {
         border: none;

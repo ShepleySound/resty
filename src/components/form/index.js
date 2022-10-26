@@ -36,13 +36,12 @@ export default function Form(props) {
           <CodeEditor
             id="request-body-json"
             name="body"
+            className="code-editor"
             value={body}
             language="json"
             placeholder="JSON"
             onChange={(e) => setBody(e.target.value)}
             style={{
-              fontSize: 12,
-              backgroundColor: "#242836",
               fontFamily: 'ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace',
             }}
           />
