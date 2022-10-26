@@ -4,4 +4,10 @@ main {
   width: 100vw;
   height: 100%;
   margin: 0;
+
+  .dynamic-panels {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
 }

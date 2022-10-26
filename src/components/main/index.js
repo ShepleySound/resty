@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import Form from "../form";
 import Results from "../results";
-import QueryPanel from '../query-panel';
+import HistoryPanel from '../history-panel';
 import './main.scss'
 
 export default function Main(props) {
@@ -22,9 +22,11 @@ export default function Main(props) {
   }
   return (
     <main>
-      <QueryPanel method={requestParams.method} url={requestParams.url}/>
-      <Form handleApiCall={callApi}/>
-      <Results data={data}/>
+      <HistoryPanel method={requestParams.method} url={requestParams.url}/>
+      <div className='dynamic-panels'>
+        <Form handleApiCall={callApi}/>
+        <Results data={data}/>
+      </div>
     </main>
   )
 }

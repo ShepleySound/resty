@@ -1,21 +1,25 @@
-import './query-panel.scss'
+import './history-panel.scss'
 
 function Query(props) {
   return (
-    <div>
+    <div className='query'>
       <span className="query-method">{props.method}</span>
       <span className="query-url">{props.url}</span>
     </div>
   )
 }
 
-export default function QueryPanel(props) {
+export default function HistoryPanel(props) {
+
+
+
   return (
     <>
-      <section className="query-panel">
+      <section className="history-panel">
+        {props.method && 
         <Query method={props.method} url={props.url}/>
-        <Query method={props.method} url={props.url}/>
-        <Query method={props.method} url={props.url}/>
+        }
+       
       </section>
     </>
   )

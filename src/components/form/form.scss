@@ -8,20 +8,50 @@ form {
   width: 100%;
   box-sizing: border-box;
 
-  label {
+  // label {
+  //   display: flex;
+  //   margin: 1rem 0;
+  //   span {
+  //     margin-right: .5rem;
+  //   }
+  // }
+
+  .search-bar {
+    box-sizing: border-box;
     display: flex;
-    margin: 1rem 0;
-    span {
-      margin-right: .5rem;
-    }
+    flex-direction: row;
   }
-  
+
+  select {
+    box-sizing: border-box;
+    height: 1.5rem;
+    border: 0;
+    background-color: #242832;
+    color: #eeeeee;
+  }
+
+  input {
+    box-sizing: border-box;
+    height: 1.5rem;
+    border: 0;
+    background-color: #182024;
+    color: #eeeeee;
+  }
+
+  button {
+    box-sizing: border-box;
+    height: 1.5rem;
+    border: 0;
+    background-color: #242832;
+    color: #eeeeee;
+  }
+
   fieldset {
     display: flex;
     margin: .25rem 0;
     padding: 0;
-    border: none;  
-  
+    border: none;
+
     &.methods {
       button {
         cursor: pointer;
@@ -31,7 +61,8 @@ form {
         border: none;
         border-radius: app.$radius;
 
-        &:hover, &.active {
+        &:hover,
+        &.active {
           background: #fff;
         }
       }

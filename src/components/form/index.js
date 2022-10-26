@@ -14,25 +14,17 @@ export default function Form(props) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>
-        <span>URL: </span>
+      <div className="search-bar">
+        <select name="method" id="method-select">
+          <option value="get">GET</option>
+          <option value="post">POST</option>
+          <option value="put">PUT</option>
+          <option value="delete">DELETE</option>
+        </select>
         <input name="url" type="text" />
         <button type="submit">GO!</button>
-      </label>
-      <fieldset className="methods">
-        <button type="button" id="get">
-          GET
-        </button>
-        <button type="button" id="post">
-          POST
-        </button>
-        <button type="button" id="put">
-          PUT
-        </button>
-        <button type="button" id="delete">
-          DELETE
-        </button>
-      </fieldset>
+      </div>
+
     </form>
   );
 }
