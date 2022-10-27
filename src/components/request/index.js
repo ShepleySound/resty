@@ -14,6 +14,7 @@ export default function Request(props) {
       url: url,
       body: body,
     };
+
     props.handleApiCall(formData);
   };
 
@@ -29,7 +30,7 @@ export default function Request(props) {
             <option value="put">PUT</option>
             <option value="delete">DELETE</option>
           </select>
-          <input value={url} name="url" onChange={(e) => setUrl(e.target.value)} type="text" data-testid="url-input"/>
+          <input value={url} name="url" onChange={(e) => setUrl(e.target.value)} type="text" data-testid="url-input" required/>
           <button type="submit">Send</button>
         </div>
         <div className="request-body">

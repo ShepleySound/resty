@@ -10,12 +10,14 @@ import '../../stylesheets/main.scss'
 export default function App(props) {
   const [loading, setLoading] = useState(false);
   const [response, setResponse] = useState(null);
+  const [requestHistory, setRequestHistory] = useState([]);
   const [request, setRequest] = useState({
     method: 'get',
     url: 'https://pokeapi.co/api/v2/pokemon/ditto',
   })
 
   function callApi(params){
+    setRequestHistory(oldHistory => [...oldHistory, params])
     setRequest(params);
   }
 
@@ -66,7 +68,7 @@ export default function App(props) {
 
   return (
     <main>
-      <HistoryPanel method={request.method} url={request.url}/>
+      <HistoryPanel requestHistory={requestHistory}/>
       <div className='dynamic-panels'>
         <Request handleApiCall={callApi}/>
         <Response data={response} loading={loading}/>

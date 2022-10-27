@@ -16,8 +16,12 @@ export default function HistoryPanel(props) {
   return (
     <>
       <section className="history-panel">
-        {props.method && 
-        <Query method={props.method} url={props.url}/>
+        {
+          props.requestHistory.map(request => {
+            return(
+              <Query method={request.method} url={request.url}/>
+            )
+          })
         }
        
       </section>
