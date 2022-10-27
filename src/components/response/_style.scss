@@ -6,9 +6,9 @@ section.response {
     flex-direction: column;
     border-top: 2px solid #212329;
     // height: 50%;
+    padding-left: .5rem;
 
     h2 {
-        margin-left: .5rem;
         font-size: 1.2rem;
     }
 }
@@ -19,7 +19,6 @@ img.response-box {
 }
 
 .response-box {
-    padding: .5rem;
     font-size: 1rem;
     height: 20rem;
     overflow: auto;

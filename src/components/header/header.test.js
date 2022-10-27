@@ -1,8 +1,8 @@
 import { render, screen } from "@testing-library/react";
-import App from "./app";
+import Header from "./index";
 
 test("renders page title", () => {
-  render(<App />);
+  render(<Header />);
   const mainHeader = screen.getByText(/RESTy/i);
   expect(mainHeader).toBeInTheDocument();
 });

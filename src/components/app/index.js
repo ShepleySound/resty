@@ -69,9 +69,7 @@ export default function App(props) {
       <HistoryPanel method={request.method} url={request.url}/>
       <div className='dynamic-panels'>
         <Request handleApiCall={callApi}/>
-        {loading ? <h2>loading</h2> :
-          <Response data={response}/>
-        }
+        <Response data={response} loading={loading}/>
       </div>
     </main>
   )
