@@ -1,26 +1,17 @@
-@use "src/app";
+@import '../../stylesheets/variables';
 
 form {
-  display: flex;
-  flex-direction: column;
-  // align-items: center;
-  width: 100%;
-  box-sizing: border-box;
-  height: 50%;
-  // overflow: hidden;
 
   .search-bar {
-    box-sizing: border-box;
     display: flex;
     flex-direction: row;
-    border-radius: app.$radius;
+    border-radius: $radius;
     overflow: hidden;
     margin: .5rem 0;
     max-width: 30rem;
     margin: .5rem;
 
     select {
-      box-sizing: border-box;
       height: 2rem;
       border: 0;
       background-color: #242836;
@@ -29,7 +20,6 @@ form {
     }
 
     input {
-      box-sizing: border-box;
       height: 2rem;
       border: 0;
       padding: 0rem .5rem;
@@ -40,7 +30,6 @@ form {
     }
 
     button {
-      box-sizing: border-box;
       height: 2rem;
       border: 0;
       padding: .5rem 1rem;
@@ -54,27 +43,26 @@ form {
   }
 
   .request-body {
-    flex-direction: column;
-    box-sizing: border-box;
-    flex: 1;
-    max-width: 100%;
-    margin: .5rem;
     display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin: .5rem;
+    height: 100%;
 
     label {
       font-size: .9rem;
     }
 
     .code-editor {
-      box-sizing: border-box;
       background-color: #242836;
       border: 0;
       color: #eeeeee;
-      border-radius: app.$radius;
+      border-radius: $radius;
       resize: none;
-      max-width: 100%;
-      min-height: 8rem;
+      flex: 1;
+      // min-height: 8rem;
       font-size: .8rem;
+      overflow: auto;
 
       &:active {
         border: none;

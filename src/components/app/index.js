@@ -2,12 +2,12 @@ import { useState, useEffect } from 'react';
 
 import axios from 'axios';
 
-import Form from "../form";
-import Results from "../results";
+import Request from "../request";
+import Response from "../response";
 import HistoryPanel from '../history-panel';
-import './main.scss'
+import '../../stylesheets/main.scss'
 
-export default function Main(props) {
+export default function App(props) {
   const [loading, setLoading] = useState(false);
   const [response, setResponse] = useState(null);
   const [request, setRequest] = useState({
@@ -29,7 +29,6 @@ export default function Main(props) {
       try {
         
         let parsedBody;
-        console.log(apiRequest.body)
         if (apiRequest.body) {
           try {
             parsedBody = JSON.parse(apiRequest.body)
@@ -69,9 +68,9 @@ export default function Main(props) {
     <main>
       <HistoryPanel method={request.method} url={request.url}/>
       <div className='dynamic-panels'>
-        <Form handleApiCall={callApi}/>
+        <Request handleApiCall={callApi}/>
         {loading ? <h2>loading</h2> :
-          <Results data={response}/>
+          <Response data={response}/>
         }
       </div>
     </main>

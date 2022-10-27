@@ -1,4 +1,4 @@
-import './history-panel.scss'
+import '../../stylesheets/main.scss'
 
 function Query(props) {
   return (
