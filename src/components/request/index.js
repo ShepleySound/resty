@@ -3,15 +3,16 @@ import CodeEditor from '@uiw/react-textarea-code-editor';
 import {useState} from "react"
 
 export default function Request(props) {
-
-  const [body, setBody] = useState(null)
+  const [method, setMethod] = useState('GET')
+  const [url, setUrl] = useState('')
+  const [body, setBody] = useState('')
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = {
-      method: e.target.method.value,
-      url: e.target.url.value,
-      body: e.target.body.value
+      method: method,
+      url: url,
+      body: body,
     };
     props.handleApiCall(formData);
   };
@@ -22,13 +23,13 @@ export default function Request(props) {
       <h2>Request</h2>
       <form onSubmit={handleSubmit}>
         <div className="search-bar">
-          <select name="method" id="method-select">
+          <select value={method} onChange={(e) => setMethod(e.target.value)} name="method" id="method-select">
             <option value="get">GET</option>
             <option value="post">POST</option>
             <option value="put">PUT</option>
             <option value="delete">DELETE</option>
           </select>
-          <input name="url" type="text" />
+          <input value={url} name="url" onChange={(e) => setUrl(e.target.value)} type="text" data-testid="url-input"/>
           <button type="submit">Send</button>
         </div>
         <div className="request-body">

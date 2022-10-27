@@ -11,8 +11,6 @@ export default function Response(props) {
           <pre className="response-box">
             {props.data ? JSON.stringify(props.data, null, 2) : null}
           </pre>)
-        
-      
     }
     </section>
   );
