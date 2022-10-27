@@ -1,0 +1,76 @@
+@import '../../stylesheets/variables';
+
+.request {
+
+  padding: 0 .5rem;
+
+  form {
+
+    .search-bar {
+      display: flex;
+      flex-direction: row;
+      border-radius: $radius;
+      overflow: hidden;
+      max-width: 30rem;
+      margin: .5rem 0;
+
+      select {
+        height: 2rem;
+        border: 0;
+        background-color: #242836;
+        color: #eeeeee;
+        text-align: center;
+      }
+
+      input {
+        height: 2rem;
+        border: 0;
+        padding: 0rem .5rem;
+        background-color: #182030;
+        color: #eeeeee;
+        min-width: 5rem;
+        flex: 1;
+      }
+
+      button {
+        height: 2rem;
+        border: 0;
+        padding: .5rem 1rem;
+        background-color: #242836;
+        color: #eeeeee;
+
+        &:hover {
+          background-color: #283040;
+        }
+      }
+    }
+
+    .request-body {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      margin: .5rem 0;
+      height: 100%;
+
+      label {
+        font-size: .9rem;
+      }
+
+      .code-editor {
+        background-color: #242836;
+        border: 0;
+        color: #eeeeee;
+        border-radius: $radius;
+        resize: none;
+        flex: 1;
+        font-size: .8rem;
+        overflow: auto;
+
+        &:active {
+          border: none;
+        }
+      }
+
+    }
+  }
+}

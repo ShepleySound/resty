@@ -1,0 +1,10 @@
+@import '../../stylesheets/variables';
+
+footer {
+    background: darken($backgroundColor, 08);
+    padding: 1em 3em;
+    margin-top: auto;
+    height: 8vh;
+    width: 100vw;
+    text-align: center;
+}
