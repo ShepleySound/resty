@@ -2,9 +2,11 @@ import '../../stylesheets/main.scss'
 
 function Query(props) {
   return (
-    <div className='query'>
-      <span className="query-method">{props.method}</span>
-      <span className="query-url">{props.url}</span>
+    <div className='query' onClick={() => {
+      props.recallRequest(props.request)
+      }}>
+      <span className="query-method">{props.request.method}</span>
+      <span className="query-url">{props.request.url}</span>
     </div>
   )
 }
@@ -17,9 +19,9 @@ export default function HistoryPanel(props) {
     <>
       <section className="history-panel">
         {
-          props.requestHistory.map(request => {
+          props.requestHistory.map((request, index) => {
             return(
-              <Query method={request.method} url={request.url}/>
+              <Query key={index} request={request} recallRequest={props.recallRequest}/>
             )
           })
         }

@@ -1,6 +1,6 @@
 import '../../stylesheets/main.scss'
 import CodeEditor from '@uiw/react-textarea-code-editor';
-import {useState} from "react"
+import {useEffect, useState} from "react"
 
 export default function Request(props) {
   const [method, setMethod] = useState('GET')
@@ -17,6 +17,12 @@ export default function Request(props) {
 
     props.handleApiCall(formData);
   };
+
+  useEffect( () => {
+    setMethod(props.currentRequest.method);
+    setUrl(props.currentRequest.url);
+    setBody(props.currentRequest.body);
+  }, [props.currentRequest])
 
 
   return (

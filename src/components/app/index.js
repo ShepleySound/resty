@@ -11,23 +11,24 @@ export default function App(props) {
   const [loading, setLoading] = useState(false);
   const [response, setResponse] = useState(null);
   const [requestHistory, setRequestHistory] = useState([]);
-  const [request, setRequest] = useState({
+  const [currentRequest, setCurrentRequest] = useState({
     method: 'get',
     url: 'https://pokeapi.co/api/v2/pokemon/ditto',
   })
 
-  function callApi(params){
+  function sendNewRequest(params){
     setRequestHistory(oldHistory => [...oldHistory, params])
-    setRequest(params);
+    setCurrentRequest(params);
   }
 
+  function recallRequest(params) {
+    setCurrentRequest(params);
+  }
 
 
   useEffect(() => {
     async function fetchData(apiRequest){
       setLoading(true)
-      // Just using this to test out the loading indicator. Remove this in the next phase.
-      await new Promise(resolve => setTimeout(resolve, 1500));
       try {
         
         let parsedBody;
@@ -57,20 +58,20 @@ export default function App(props) {
 
     setResponse(null);
     if (!ignore) {
-      fetchData(request)
+      fetchData(currentRequest)
         .catch(console.error)
     }
     
     return () => {
       ignore = true;
     }
-  }, [request])
+  }, [currentRequest])
 
   return (
     <main>
-      <HistoryPanel requestHistory={requestHistory}/>
+      <HistoryPanel requestHistory={requestHistory} recallRequest={recallRequest}/>
       <div className='dynamic-panels'>
-        <Request handleApiCall={callApi}/>
+        <Request currentRequest={currentRequest} handleApiCall={sendNewRequest}/>
         <Response data={response} loading={loading}/>
       </div>
     </main>
