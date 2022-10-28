@@ -7,13 +7,14 @@ import Response from "../response";
 import HistoryPanel from '../history-panel';
 import '../../stylesheets/main.scss'
 
-export default function App(props) {
+export default function App() {
   const [loading, setLoading] = useState(false);
   const [response, setResponse] = useState(null);
   const [requestHistory, setRequestHistory] = useState([]);
   const [currentRequest, setCurrentRequest] = useState({
     method: 'get',
     url: 'https://pokeapi.co/api/v2/pokemon/ditto',
+    body: '',
   })
 
   function sendNewRequest(params){

@@ -2,10 +2,11 @@ import '../../stylesheets/main.scss'
 import CodeEditor from '@uiw/react-textarea-code-editor';
 import {useEffect, useState} from "react"
 
+
 export default function Request(props) {
-  const [method, setMethod] = useState('GET')
-  const [url, setUrl] = useState('')
-  const [body, setBody] = useState('')
+  const [method, setMethod] = useState(props.currentRequest.method)
+  const [url, setUrl] = useState(props.currentRequest.url)
+  const [body, setBody] = useState(props.currentRequest.body)
 
   const handleSubmit = (e) => {
     e.preventDefault();
