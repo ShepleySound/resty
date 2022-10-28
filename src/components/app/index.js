@@ -7,25 +7,29 @@ import Response from "../response";
 import HistoryPanel from '../history-panel';
 import '../../stylesheets/main.scss'
 
-export default function App(props) {
+export default function App() {
   const [loading, setLoading] = useState(false);
   const [response, setResponse] = useState(null);
-  const [request, setRequest] = useState({
+  const [requestHistory, setRequestHistory] = useState([]);
+  const [currentRequest, setCurrentRequest] = useState({
     method: 'get',
     url: 'https://pokeapi.co/api/v2/pokemon/ditto',
+    body: '',
   })
 
-  function callApi(params){
-    setRequest(params);
+  function sendNewRequest(params){
+    setRequestHistory(oldHistory => [...oldHistory, params])
+    setCurrentRequest(params);
   }
 
+  function recallRequest(params) {
+    setCurrentRequest(params);
+  }
 
 
   useEffect(() => {
     async function fetchData(apiRequest){
       setLoading(true)
-      // Just using this to test out the loading indicator. Remove this in the next phase.
-      await new Promise(resolve => setTimeout(resolve, 1500));
       try {
         
         let parsedBody;
@@ -55,20 +59,20 @@ export default function App(props) {
 
     setResponse(null);
     if (!ignore) {
-      fetchData(request)
+      fetchData(currentRequest)
         .catch(console.error)
     }
     
     return () => {
       ignore = true;
     }
-  }, [request])
+  }, [currentRequest])
 
   return (
     <main>
-      <HistoryPanel method={request.method} url={request.url}/>
+      <HistoryPanel requestHistory={requestHistory} recallRequest={recallRequest}/>
       <div className='dynamic-panels'>
-        <Request handleApiCall={callApi}/>
+        <Request currentRequest={currentRequest} handleApiCall={sendNewRequest}/>
         <Response data={response} loading={loading}/>
       </div>
     </main>

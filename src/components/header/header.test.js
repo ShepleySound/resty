@@ -3,6 +3,6 @@ import Header from "./index";
 
 test("renders page title", () => {
   render(<Header />);
-  const mainHeader = screen.getByText(/RESTy/i);
+  const mainHeader = screen.getByRole('banner');
   expect(mainHeader).toBeInTheDocument();
 });
